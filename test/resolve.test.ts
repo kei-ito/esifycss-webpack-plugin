@@ -4,9 +4,9 @@ import * as vm from 'vm';
 import ava from 'ava';
 import * as webpack from 'webpack';
 import EsifyCSSWebpackPlugin from '../src';
-import {compile} from './compile';
-import {setupTest} from './setupTest';
-import {deployFiles} from './deployFiles';
+import {compile} from './util/compile';
+import {setupTest} from './util/setupTest';
+import {deployFiles} from './util/deployFiles';
 
 ava('resolve .css → .css.js', async (t) => {
     const {directory, defaultConfig} = await setupTest();

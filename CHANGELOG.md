@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.1.1 (2021-09-11)
+
+### Bug Fixes
+
+- add cjs.js for default export ([3e113e5](https://github.com/kei-ito/esifycss-loader/commit/3e113e59b61e455eead60dc083cd1748fb14f185))
+
+
 ## v0.1.0 (2021-09-11)
 
 ### Features

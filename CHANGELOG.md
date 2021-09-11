@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.1.3 (2021-09-11)
+
+### Bug Fixes
+
+- support another type of ResolveData ([d1478e1](https://github.com/kei-ito/esifycss-loader/commit/d1478e19a423cc7c8293094bcd307d9d02db3f82))
+
+
 ## v0.1.2 (2021-09-11)
 
 ### Bug Fixes

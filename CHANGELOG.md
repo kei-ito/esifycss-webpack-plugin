@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.1.2 (2021-09-11)
+
+### Bug Fixes
+
+- input may have resolve hook ([fe9770c](https://github.com/kei-ito/esifycss-loader/commit/fe9770c74501e0f17266c95bb58a0a8d16fa9481))
+
+### Tests
+
+- exclude lib ([5e97838](https://github.com/kei-ito/esifycss-loader/commit/5e978382198a154cf9331113b27cf79ef1eb9ba1))
+
+
 ## v0.1.1 (2021-09-11)
 
 ### Bug Fixes

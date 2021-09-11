@@ -3,9 +3,9 @@ import * as fs from 'fs';
 import * as path from 'path';
 import type * as webpack from 'webpack';
 
-const pluginName = 'EsifyCSSResolverPlugin';
+const pluginName = 'EsifyCSSWebpackPlugin';
 
-class EsifyCSSResolverPlugin {
+export class EsifyCSSWebpackPlugin {
 
     public apply(compiler: webpack.Compiler) {
         compiler.hooks.normalModuleFactory.tap(pluginName, (normalModuleFactory) => {
@@ -29,4 +29,4 @@ class EsifyCSSResolverPlugin {
 
 }
 
-export default EsifyCSSResolverPlugin;
+export default EsifyCSSWebpackPlugin;

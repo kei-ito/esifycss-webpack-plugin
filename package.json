@@ -58,7 +58,7 @@
             "ts-node/register"
         ],
         "files": [
-            "src/**/*.test.ts"
+            "test/**/*.test.ts"
         ]
     },
     "lint-staged": {

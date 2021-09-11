@@ -12,7 +12,7 @@
     "engines": {
         "node": ">=12"
     },
-    "main": "./lib/indexen.js",
+    "main": "./lib/index.js",
     "files": [
         "lib"
     ],

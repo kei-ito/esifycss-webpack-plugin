@@ -1,0 +1,83 @@
+{
+    "name": "esifycss-loader",
+    "publishConfig": {
+        "access": "public"
+    },
+    "version": "0.1.2",
+    "license": "Apache-2.0",
+    "author": {
+        "name": "Kei Ito",
+        "email": "kei.itof@gmail.com",
+        "url": "https://github.com/kei-ito"
+    },
+    "homepage": "https://github.com/kei-ito/esifycss-loader",
+    "repository": "https://github.com/kei-ito/esifycss-loader",
+    "engines": {
+        "node": ">=12"
+    },
+    "main": "./lib/indexen.js",
+    "files": [
+        "lib"
+    ],
+    "bin": {
+        "indexen": "./lib/cli.js",
+        "nlib-indexen": "./lib/cli.js"
+    },
+    "scripts": {
+        "build": "tsc --project tsconfig.build.json",
+        "test": "run-s test:*",
+        "test:type": "tsc --noEmit",
+        "test:unit": "ava",
+        "lint": "eslint --ext .ts src",
+        "version": "run-s version:changelog version:add",
+        "version:changelog": "npx @nlib/changelog --output CHANGELOG.md",
+        "version:add": "git add ."
+    },
+    "devDependencies": {
+        "@nlib/eslint-config": "3.17.25",
+        "@nlib/githooks": "0.1.0",
+        "@typescript-eslint/eslint-plugin": "4.30.0",
+        "@typescript-eslint/parser": "4.30.0",
+        "ava": "3.15.0",
+        "eslint": "7.32.0",
+        "lint-staged": "11.1.2",
+        "npm-run-all": "4.1.5",
+        "ts-node": "10.2.1",
+        "typescript": "4.4.2"
+    },
+    "eslintConfig": {
+        "extends": [
+            "@nlib/eslint-config"
+        ],
+        "env": {
+            "node": true
+        },
+        "rules": {
+            "@nlib/no-globals": "off"
+        }
+    },
+    "ava": {
+        "extensions": [
+            "ts"
+        ],
+        "require": [
+            "ts-node/register"
+        ],
+        "files": [
+            "src/**/*.test.ts"
+        ]
+    },
+    "lint-staged": {
+        "*.ts": [
+            "eslint"
+        ],
+        "*.js": [
+            "eslint"
+        ]
+    },
+    "renovate": {
+        "extends": [
+            "github>nlibjs/renovate-config"
+        ]
+    }
+}

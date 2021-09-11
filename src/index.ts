@@ -25,13 +25,29 @@ const isNormalModuleFactoryLike = (
     input: ObjectWithHooks,
 ): input is Pick<NormalModuleFactory, 'hooks'> => 'resolve' in input.hooks;
 
+const getContextDirectory = (
+    {context, path: contextPath}: {
+        context: string | {issuer: string},
+        path?: string,
+    },
+): string => {
+    if (contextPath) {
+        return contextPath;
+    }
+    if (typeof context === 'string') {
+        return context;
+    }
+    return path.dirname(context.issuer);
+};
+
 const resolveModuleCss = async (resolveData: ResolveData) => {
     if (!resolveData.request.endsWith('.module.css')) {
         return;
     }
     for (const extension of ['.js', '.ts']) {
         const extended = `${resolveData.request}${extension}`;
-        if (await fileExistsAt(path.join(resolveData.context, extended))) {
+        const directory = getContextDirectory(resolveData);
+        if (await fileExistsAt(path.join(directory, extended))) {
             // eslint-disable-next-line require-atomic-updates
             resolveData.request = extended;
             return;
